@@ -5,20 +5,17 @@ To run this application:
 
 
 Install node Packages
-### Run
 ```
 npm i
 ```
 
 
 Run database migrations:
-### Run
 ```
 npx sequelize db:migration
 ```
 
 To run app:
-### Run
 ```
 nodemon start
 ```
