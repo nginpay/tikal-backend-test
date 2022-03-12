@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "1e5614be-ce44-4f2e-9fcd-f6811ccc928c",
+		"name": "Tikal-Backend-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro de Aluno e Notas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"aluno\": \"Roberta\",\r\n        \"notas\": [\r\n            {\"nota\": 10},\r\n            {\"nota\": 9},\r\n            {\"nota\": 6.25}\r\n        ]\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/notas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"notas"
+					]
+				},
+				"description": "Essa rota utiliza a função do Sequelize fazendo um bulkcreate"
+			},
+			"response": [
+				{
+					"name": "Cadastro de Aluno e Notas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"aluno\": \"Roberta\",\r\n        \"notas\": [\r\n            {\"nota\": 10},\r\n            {\"nota\": 9},\r\n            {\"nota\": 6.25}\r\n        ]\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/notas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"notas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-TfRu5sCKRnmdJ4gLVZVFmSXfKOo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 16:47:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"notas atualizadas com sucesso\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Consulta de Aluno por RA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/aluno/795276",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aluno",
+						"795276"
+					]
+				},
+				"description": "Após o cadastro de aluno e notas, é exibido um codigo de RA. Esse codigo é usado para consultar o aluno"
+			},
+			"response": [
+				{
+					"name": "Consulta de Aluno por RA",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/aluno/795276",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"aluno",
+								"795276"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"75-P0NWLM/Fxpewy0XKC+pKUlSkls8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 16:24:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"ra\": \"795276\",\n    \"name\": \"Heloisa\",\n    \"createdAt\": \"2022-03-12T16:16:32.390Z\",\n    \"updatedAt\": \"2022-03-12T16:16:32.390Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Consultar Notas do Aluno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/nota/144598",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"nota",
+						"144598"
+					]
+				},
+				"description": "Essa rota utiliza o RA para pesquisar o aluno e apresentar suas notas, média e resultado (Aprovado, Reprovado ou Recuperação)"
+			},
+			"response": [
+				{
+					"name": "Consultar Notas do Aluno",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/nota/144598",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"nota",
+								"144598"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"62-7LfkwMuaPaknFJgKhM0mj/z9lFM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Mar 2022 16:47:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ra\": \"144598\",\n    \"aluno\": \"Roberta\",\n    \"notas\": [\n        8,\n        9,\n        6\n    ],\n    \"media\": 7.666666666666667,\n    \"resultado\": \"Aprovado\"\n}"
+				}
+			]
+		}
+	]
+}
